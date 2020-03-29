@@ -54,6 +54,26 @@ int greatest_of_three(int num1, int num2, int num3){
 float average_of_three(int num1,int num2,int num3){
   return (num1+num2+num3)/3.0;
 }
+int factorial(int num){
+  int fact = 1;
+  for(int i = 2; i<=num;i++){
+    fact = fact*i;
+  }
+  return fact;
+}
+
+void fibonacci(int n){
+  int first_num = 1;
+  int second_num = -1;
+  printf("The fibonacci series is :\n");
+  while(n!=0){
+    int sum = first_num+second_num;
+    printf("%d\n",sum);
+    second_num = first_num;
+    first_num = sum;
+    n--;
+  }
+}
 
 int main(void){
 
@@ -109,6 +129,14 @@ int main(void){
   printf("\nEnter three numbers to find average.\n");
   scanf("%d%d%d",&num,&num2,&num3);
   printf("Average is : %0.2f.\n",average_of_three(num,num2,num3));
+
+  printf("\nEnter number to find factorial.\n");
+  scanf("%d",&num);
+  printf("factorial of %d is : %d.\n",num,factorial(num));
+
+  printf("\nEnter number to print fibonacci series.\n");
+  scanf("%d",&num);
+  fibonacci(num);
 
   return 0;
 }
