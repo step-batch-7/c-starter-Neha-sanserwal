@@ -92,6 +92,12 @@ void even_num_series(int n){
   }
 }
 
+void multiplication_table(int n){
+  for(int i = 1; i<=10; i++ ){
+   printf("%d * %d = %d\n", n, i, n*i);
+  }
+}
+
 int main(void){
 
   int num, num2;
@@ -162,6 +168,10 @@ int main(void){
   printf("\nEnter number to print even number series.\n");
   scanf("%d",&num);
   even_num_series(num);
+
+  printf("\nEnter number to print it multiplication table.\n");
+  scanf("%d",&num);
+  multiplication_table(num);
 
   return 0;
 }
