@@ -51,6 +51,10 @@ int greatest_of_three(int num1, int num2, int num3){
   return greatest_of_two(greater,num3);
 }
 
+float average_of_three(int num1,int num2,int num3){
+  return (num1+num2+num3)/3.0;
+}
+
 int main(void){
 
   int num, num2;
@@ -101,6 +105,10 @@ int main(void){
   printf("\nEnter three numbers to find greatest.\n");
   scanf("%d%d%d",&num,&num2,&num3);
   printf("Greatest is : %d.\n",greatest_of_three(num,num2,num3));
+
+  printf("\nEnter three numbers to find average.\n");
+  scanf("%d%d%d",&num,&num2,&num3);
+  printf("Average is : %0.2f.\n",average_of_three(num,num2,num3));
 
   return 0;
 }
