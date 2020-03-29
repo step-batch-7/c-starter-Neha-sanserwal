@@ -26,25 +26,34 @@ int LCM(int num1,int num2){
   return (num1*num2)/GCD(num1,num2);
 }
 
-double SI(int p, int r, int t){
+float SI(int p, int r, int t){
   return (p*r*t)/100;
 }
 
-double CI(float p, float r, float t){
+float CI(float p, float r, float t){
   return p*(pow(1+r/100,t))-p;
 }
 
-double to_fahrenheit(double temp_in_c){
+float to_fahrenheit(float temp_in_c){
   return ((9/5.0)*(temp_in_c))+32;
 }
 
-double to_celsius(double temp_in_f){
+float to_celsius(float temp_in_f){
   return (5/9.0)*(temp_in_f-32);
+}
+
+int greatest_of_two(int num1,int num2){
+  return (num1>num2)?num1:num2;
+}
+
+int greatest_of_three(int num1, int num2, int num3){
+  int greater = greatest_of_two(num1,num2);
+  return greatest_of_two(greater,num3);
 }
 
 int main(void){
 
-  int num, another_num;
+  int num, num2;
   printf("Enter a number to find even or odd: ");
   scanf("%d",&num);
 
@@ -63,12 +72,12 @@ int main(void){
   printf("Cube of %d is %d.\n",num, cube(num));
 
   printf("\nEnter two numbers to find GCD: \n");
-  scanf("%d %d",&num, &another_num);
-  printf("GCD of %d and %d is : %d.\n",num,another_num,GCD(num,another_num));
+  scanf("%d %d",&num, &num2);
+  printf("GCD of %d and %d is : %d.\n",num,num2,GCD(num,num2));
 
   printf("\nEnter two number to find LCM: \n");
-  scanf("%d %d",&num, &another_num);
-  printf("LCM of %d and %d is : %d.\n",num,another_num,LCM(num,another_num));
+  scanf("%d %d",&num, &num2);
+  printf("LCM of %d and %d is : %d.\n",num,num2,LCM(num,num2));
 
   float principal, rate, time;
   printf("\nEnter principal, rate and interest to find SI.\n");
@@ -87,5 +96,11 @@ int main(void){
   printf("\nEnter temperature in fahrenheit to convert in celsius.\n");
   scanf("%f",&temp);
   printf("Temp in celsius is : %0.2f.\n",to_celsius(temp));
+
+  int num3;
+  printf("\nEnter three numbers to find greatest.\n");
+  scanf("%d%d%d",&num,&num2,&num3);
+  printf("Greatest is : %d.\n",greatest_of_three(num,num2,num3));
+
   return 0;
 }
