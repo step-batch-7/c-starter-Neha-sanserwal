@@ -54,6 +54,7 @@ int greatest_of_three(int num1, int num2, int num3){
 float average_of_three(int num1,int num2,int num3){
   return (num1+num2+num3)/3.0;
 }
+
 int factorial(int num){
   int fact = 1;
   for(int i = 2; i<=num;i++){
@@ -96,6 +97,22 @@ void multiplication_table(int n){
   for(int i = 1; i<=10; i++ ){
    printf("%d * %d = %d\n", n, i, n*i);
   }
+}
+
+void sum_of_n(int start, int end){
+  int sum = 1;
+  for(;start<=end;start++){
+    sum += start;
+  }
+  printf("%d\n",sum);
+}
+
+void product_of_n(int start, int end){
+  int product = 1;
+  for(;start<=end;start++){
+    product *= start;
+  }
+  printf("%d\n",product);
 }
 
 int main(void){
@@ -172,6 +189,14 @@ int main(void){
   printf("\nEnter number to print it multiplication table.\n");
   scanf("%d",&num);
   multiplication_table(num);
+
+  printf("\nEnter start and end numbers to print total sum.\n");
+  scanf("%d%d",&num,&num2);
+  sum_of_n(num,num2);
+
+  printf("\nEnter start and end numbers to print total product.\n");
+  scanf("%d%d",&num,&num2);
+  product_of_n(num,num2);
 
   return 0;
 }
