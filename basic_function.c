@@ -63,15 +63,24 @@ int factorial(int num){
 }
 
 void fibonacci(int n){
-  int first_num = 1;
-  int second_num = -1;
+  int first_num = 0;
+  int second_num = 1;
+  int sum = 0;
   printf("The fibonacci series is :\n");
   while(n!=0){
-    int sum = first_num+second_num;
-    printf("%d\n",sum);
+    printf("%d\n",first_num);
+    sum = first_num+second_num;
     second_num = first_num;
     first_num = sum;
     n--;
+  }
+}
+
+void odd_num_series(int n){
+  for(int i = 1; i<=n; i++ ){
+    if(!is_even(i)){
+      printf("%d\n",i );
+    }
   }
 }
 
@@ -137,6 +146,10 @@ int main(void){
   printf("\nEnter number to print fibonacci series.\n");
   scanf("%d",&num);
   fibonacci(num);
+
+  printf("\nEnter number to print odd number series.\n");
+  scanf("%d",&num);
+  odd_num_series(num);
 
   return 0;
 }
