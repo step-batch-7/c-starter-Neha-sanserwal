@@ -84,6 +84,14 @@ void odd_num_series(int n){
   }
 }
 
+void even_num_series(int n){
+  for(int i = 1; i<=n; i++ ){
+    if(is_even(i)){
+      printf("%d\n",i );
+    }
+  }
+}
+
 int main(void){
 
   int num, num2;
@@ -150,6 +158,10 @@ int main(void){
   printf("\nEnter number to print odd number series.\n");
   scanf("%d",&num);
   odd_num_series(num);
+
+  printf("\nEnter number to print even number series.\n");
+  scanf("%d",&num);
+  even_num_series(num);
 
   return 0;
 }
