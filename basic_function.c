@@ -85,6 +85,7 @@ void odd_num_series(int n){
   }
 }
 
+
 void even_num_series(int n){
   for(int i = 1; i<=n; i++ ){
     if(is_even(i)){
@@ -100,7 +101,7 @@ void multiplication_table(int n){
 }
 
 void sum_of_n(int start, int end){
-  int sum = 1;
+  int sum = 0;
   for(;start<=end;start++){
     sum += start;
   }
@@ -108,16 +109,49 @@ void sum_of_n(int start, int end){
 }
 
 void product_of_n(int start, int end){
-  int product = 1;
+  long long int product = 1;
   for(;start<=end;start++){
     product *= start;
   }
-  printf("%d\n",product);
+  printf("%lld\n",product);
+}
+
+void odd_num_between(int start, int end){
+  for(int i = start; i<=end; i++ ){
+    if(!is_even(i)){
+      printf("%d\n",i );
+    }
+  }
+}
+
+void print_nth(int start, int end,int nth_num){
+  for(; start <= end; start = start + nth_num){
+    printf("%d\n",start);
+  }
+}
+
+void sum_of_even(int start, int end){
+  long int sum =0;
+    for(; start <= end; start++){
+      if(is_even(start)){
+        sum = sum + start;
+      }
+    }
+  printf("%ld\n",sum);
+
+}
+
+void odd_num_series_reverse(int n){
+  for(int i = n; i>=1; i-- ){
+    if(!is_even(i)){
+      printf("%d\n",i );
+    }
+  }
 }
 
 int main(void){
 
-  int num, num2;
+   int num, num2;
   printf("Enter a number to find even or odd: ");
   scanf("%d",&num);
 
@@ -197,6 +231,24 @@ int main(void){
   printf("\nEnter start and end numbers to print total product.\n");
   scanf("%d%d",&num,&num2);
   product_of_n(num,num2);
+
+  printf("\nEnter start and end numbers to print odd number series.\n");
+  scanf("%d%d",&num,&num2);
+  odd_num_between(num,num2);
+
+  int nth_num;
+  printf("\nEnter start and end numbers and nth number to print every nth number.\n");
+  scanf("%d%d%d",&num,&num2,&nth_num);
+  print_nth(num,num2,nth_num);
+
+  printf("\nEnter start and end numbers to find sum of total even numbers in between.\n");
+  scanf("%d%d",&num,&num2);
+  sum_of_even(num,num2);
+
+
+  printf("\nEnter a number to print odd numbers series backward.\n");
+  scanf("%d%d",&num);
+  odd_num_series_reverse(num);
 
   return 0;
 }
